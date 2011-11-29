@@ -5,9 +5,44 @@
   </head>
   <body>
     <script src="dmodule.js"></script>
+    <script src="tile-engine.js"></script>
     <script>
       window.onload = function () {
-          
+        TileEngine = dModule.require("tile-engine")
+        tileEngine = new TileEngine()
+        tileEngine.loadImage("sprites.png", function () {
+          document.body.appendChild(tileEngine.canvas)   
+          tileEngine.canvas.style.backgroundColor = "green"
+          tileEngine.defineAsciiTiles(
+            ".rpx" + 
+            ""
+          )
+         
+          tileEngine.drawAsciiMap(
+            "...................." + 
+            "...................." + 
+            "...................." + 
+            ".............rr....." + 
+            "..............r....." + 
+            "...................." + 
+            ".....x...rrrr......." + 
+            ".....x.............." + 
+            "...................." + 
+            "...................." + 
+            "...................." + 
+            "...................." + 
+            "...................." + 
+            "...................." + 
+            "...p................" + 
+            "...................." + 
+            "...................." + 
+            "...................." + 
+            "...................." + 
+            "...................." + 
+            ""
+          )
+          tileEngine.drawTile(0,0)
+        })
       }
     </script>
   </body>
