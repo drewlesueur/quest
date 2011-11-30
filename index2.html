@@ -40,16 +40,16 @@
           "...................." + 
           "...................." + 
           "";
-
-        TileEngineDom = dModule.require("tile-engine-dom")
-        tileEngineDom = new TileEngineDom()
-        tileEngineDom.loadImage("sprites.png", function () {
-          document.body.appendChild(tileEngineDom.canvas)   
-          tileEngineDom.canvas.style.backgroundColor = "green"
-          tileEngineDom.defineAsciiTiles(asciiTiles)
-          tileEngineDom.drawAsciiMap(asciiMap)
-          tileEngineDom.drawTile(0,1)
+        TileEngine = dModule.require("tile-engine")
+        tileEngine = new TileEngine()
+        tileEngine.loadImage("sprites.png", function () {
+          document.body.appendChild(tileEngine.canvas)   
+          tileEngine.canvas.style.backgroundColor = "green"
+          tileEngine.defineAsciiTiles(asciiTiles)
+          tileEngine.drawAsciiMap(asciiMap)
+          tileEngine.drawTile(0,1)
         })
+
       }
     </script>
   </body>
